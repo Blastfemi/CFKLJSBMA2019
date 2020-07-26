@@ -1,1 +1,4 @@
 coding-for-kids-learn-javascript.code-workspace
+.vscode/
+.gitignore
+.DS_Store
