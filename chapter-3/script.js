@@ -1,9 +1,9 @@
-let adjective1 = "bouncy";
-let noun1 = "cow";
-let noun2 = "pizza";
-let adjective2 = "smelly";
-let shape1 = "triangle";
-let place1 = "kitchen";
+let adjective1 = prompt("Give me an adjective.");
+let noun1 = prompt("Give me a noun.");
+let noun2 = prompt("Give me another noun.");
+let adjective2 = prompt("Give me another adjective.");
+let shape1 = prompt("Give me a shape.");
+let place1 = prompt("Give me a place.");
 
 let song = "Twinkle, twinkle, " + adjective1;
 song += " " + noun1 + ", ";
