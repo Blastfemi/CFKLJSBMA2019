@@ -1,11 +1,16 @@
-let computerPick = Math.floor(Math.random() * 10) + 1;
-console.log(computerPick);
+let max = 10;
+let computerPick = Math.floor(Math.random() * max) + 1;
+// console.log(computerPick);
 
-let playerPick = prompt("Pick a number 1-10.");
+let playerPick = prompt("Pick a number between 1 and " + max + ".");
 playerPick = parseInt(playerPick);
 
-if (playerPick === computerPick) {
+if (playerPick < 1 || playerPick > max){
+  alert('That is an invalid choice!');
+} else if (playerPick === computerPick) {
   alert('Correct!');
-} else {
-  alert('Too bad. Better luck next time.');
+} else if (playerPick < computerPick) {
+  alert('Your guess is to low.');
+} else if (playerPick > computerPick) {
+  alert('Your guess is to high.');
 }
