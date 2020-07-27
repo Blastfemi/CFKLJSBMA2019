@@ -1,5 +1,8 @@
 let question = prompt("Ask me a yes or no question and I'll predict the answer.");
-let fortune = Math.floor(Math.random() * 5);
+let length = question.length;
+let fortune = Math.floor(Math.random() * length);
+let numberOfFortunes = 6;
+fortune = fortune % numberOfFortunes;
 
 if (fortune === 0) {
   alert("Definitely.");
@@ -11,4 +14,6 @@ if (fortune === 0) {
   alert("Outlook not good.");
 } else if (fortune === 4) {
   alert("You can count on it.");
+} else {
+  alert("It is likely.");
 }
