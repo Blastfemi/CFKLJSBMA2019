@@ -20,14 +20,26 @@ let q5 = {
 };
 
 let questions = [q1, q2, q3, q4, q5];
+let score = 0;
+let numQuestions = questions.length;
 
-let index = Math.floor(Math.random() * questions.length);
-let pickedQuestion = questions[index];
+for (let i = 0; i < numQuestions; i++) {
 
-let playerAnswer = prompt(pickedQuestion.question);
-
-if (playerAnswer === pickedQuestion.answer) {
-  alert('Correct!');
-} else {
-  alert('No, the answer was ' + pickedQuestion.answer)
+  
+  let index = Math.floor(Math.random() * questions.length);
+  let pickedQuestion = questions[index];
+  
+  questions.splice(index, 1);
+  
+  let playerAnswer = prompt(pickedQuestion.question);
+  
+  if (playerAnswer === pickedQuestion.answer) {
+    alert('Correct!');
+    score++
+  } else {
+    alert('No, the answer was ' + pickedQuestion.answer)
+  }
 }
+  
+  let percent = score / numQuestions * 100;
+  alert("Score: " + score + " Max: " + numQuestions + " Percent Correct: " + percent + "%");
