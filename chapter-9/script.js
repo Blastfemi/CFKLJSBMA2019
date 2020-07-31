@@ -1,3 +1,4 @@
+let numGuesses = 10;
 let word = prompt("Enter a word or leave blank for a random word.");
 
 if (!word) {
@@ -14,17 +15,30 @@ for (let i = 0; i < word.length; i++) {
   playerWord.push("-");
 }
 
-while (playerWord.indexOf("-") >= 0) {
+while (playerWord.indexOf("-") >= 0 && numGuesses> 0) {
   let message = playerWord.join(" ");
   message += " Guess a letter."
   let guess = prompt(message);
   guess = guess[0].toUpperCase();
 
+  let wrongGuess = true;
   for (let j = 0; j < word.length; j++) {
     if (word[j] === guess) {
       playerWord[j] = guess;
+      wrongGuess = false;
     }
+  }
+  if (wrongGuess) {
+    alert(guess + " is not in the word.");
+    numGuesses--;
+    alert("Guesses left: " + numGuesses);
   }
 };
 
 alert("The word was " + word + ".")
+
+if(numGuesses > 0) {
+  alert("You won!");
+} else {
+  alert("Better luck next time.")
+}
