@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Helper</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+</head>
+<body>
+  <!--* Select Box -->
+  <h4>
+    Choose a Function
+    <select id="select-function" onchange="updateInputs()">
+      <option value="pi">Pi (7-digit accuracy)</option>
+      <option value="areaSquare">Area of a Square</option>
+      <option value="areaCircle">Area of a Circle</option>
+      <option value="areaRectangle">Area of a Rectangle</option>
+      <option value="areaTriangle">Area of a Triangle</option>
+      <option value="perimeterSquare">Perimeter of a Square</option>
+      <option value="perimeterCircle">Perimeter of a Circle</option>
+      <option value="perimeterRectangle">Perimeter of a Rectangle</option>
+      <option value="perimeterTriangle">Perimeter of a Triangle</option>
+      <option value="volumeCube">Volume of a Cube</option>
+      <option value="volumeRectangularPrism">Volume of a Rectangular Prism</option>
+      <option value="volumeCone">Volume of a Cone</option>
+      <option value="volumeSphere">Volume of a Sphere</option>
+    </select>
+    <div id="inputs"></div>
+    <div id="output"></div>
+  </h4>
+  <!--! Select Box -->
+  <script src="script.js"></script>
+</body>
+</html>
