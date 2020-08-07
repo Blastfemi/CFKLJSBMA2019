@@ -1,0 +1,56 @@
+body {
+  background-color: lightsteelblue;
+}
+
+select {
+  font-size: 1.2em;
+  width: 250px;
+  margin: 10px;
+  border: 5px solid black; 
+}
+
+div {
+  min-height: 50px;
+  width: 280px;
+  border: 1px dashed burlywood;
+  background-color: wheat;
+}
+
+#explanation {
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 15px;
+  width: 250px;
+  padding: 15px;
+}
+
+#input {
+  margin: 10px 20px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  padding: 25px;
+  font-size: 1.2em;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 5px inset burlywood;
+}
+
+#button {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  text-shadow: 2px 2px 4px black;
+  border: 5px outset darkolivegreen;
+  background-color: olivedrab;
+  color: cornsilk;
+  box-shadow: 10px 10px 5px gray;
+  font-size:1.1em;
+  font-weight: bold;
+}
+
+#output {
+  background-color: aliceblue;
+  line-height: 25px;
+  text-align: center;
+  padding: 5px;
+  font-family: 'Lucida Sans', Verdana, sans-serif;
+}
