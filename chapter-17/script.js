@@ -35,32 +35,47 @@ function take(num) {
   if (num === 1) {
     feedback.innerHTML += " penny. ";
   } else {
-    feedback.innerHTML += " pennies. "
+    feedback.innerHTML += " pennies. ";
   }
   displayPennies();
+  computerTurn();
 }
 
 function computerTurn() {
   let num;
-  while (true) {
-    num = Math.floor(Math.random() * 3) + 1;
-    if (num <= numberPennies) {
-      break;
+  if (numberPennies > 21 && numberPennies < 25) {
+    num = numberPennies - 21;
+  } else if (numberPennies > 17 && numberPennies < 21) {
+    num = numberPennies - 17;
+  } else if (numberPennies > 13 && numberPennies < 17) {
+    num = numberPennies - 13;
+  } else if (numberPennies > 9 && numberPennies < 13) {
+    num = numberPennies - 9;
+  } else if (numberPennies > 5 && numberPennies < 9) {
+    num = numberPennies - 5;
+  } else if (numberPennies > 1 && numberPennies < 5) {
+    num = numberPennies - 1;
+  } else {
+    while (true) {
+      num = Math.floor(Math.random() * 3) + 1;
+      if (num <= numberPennies) {
+        break;
+      }
     }
   }
   if (num === numberPennies) {
-    feedback.innerHTML += "You took the last penny. You lose.";
+    feedback.innerHTML += "The computer took the last penny. You win!";
     numberPennies -= num;
     displayPennies();
     return;
   }
 
   numberPennies -= num;
-  feedback.innerHTML += "You took " + num;
-  if (num === 1) {
-    feedback.innerHTML += " penny. ";
-  } else {
-    feedback.innerHTML += " pennies. "
-  }
-  displayPennies();
+    feedback.innerHTML += "The computer took " + num;
+    if (num === 1) {
+      feedback.innerHTML += " penny. ";
+    } else {
+      feedback.innerHTML += " pennies. "
+    }
+    displayPennies();
 }
