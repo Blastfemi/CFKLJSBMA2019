@@ -57,8 +57,21 @@ function buttonClick(buttonNumber) {
     draws++;
     alert("It's a draw!");
     clearButtons();
-  } 
+  } else if (checkForDraw()) {
+    draws++;
+    alert("It's a draw!");
+    clearButtons();
+  }
   computerTakesATurn();
+}
+
+function checkForDraw() {
+  for (let b = 0; b < buttons.length; b++) {
+    if (buttons[b].innerHTML === "-") {
+      return false;
+    }
+  }
+  return true;
 }
 
 function checkForWin(player) {
@@ -129,31 +142,81 @@ function checkForWin(player) {
   return false;
 }
 
-function checkForDraw() {
-  for (let b = 0; b < buttons.length; b++) {
-    if (buttons[b].innerHTML === "-") {
-      return false;
-    }
-  }
-  return true;
-}
+
 
 function computerTakesATurn() {
+
+  for (let b = 0; b < buttons.length; b++) {
+    let button = buttons[b];
+    if (buttons.innerHTML !== "-") {
+      continue;
+    }
+    buttons.innerHTML = "O";
+    if (checkForWin ("O")) {
+      button.style.backgroundColor = oColor;
+      oWins++;
+      alert("O Wins!");
+      return;
+    }
+    buttons.innerHTML = "-";
+  }
+
+  for (let b = 0; b < buttons.length; b++) {
+    let button = buttons[b];
+    if (button.innerHTML !== "-") {
+      continue;
+    }
+    button.innerHTML = "X";
+
+    if (checkForWin("X")) {
+      button.innerHTML = "O";
+      button.style.backgroundColor = oColor;
+
+      if (checkForDraw()) {
+        draws++;
+        alert("It's a draw!");
+        clearButtons();
+      }
+      return;
+    }
+    button.innerHTML = "-";
+  }
+
   let pickingASquare = true;
   while (pickingASquare) {
     let randomButton = Math.floor(Math.random() * buttons.length);
     let button = buttons[randomButton];
 
-    if (button.innerHTML === "-") {
+    if (buttons[4].innerHTML === "-") {
+      button = buttons[4];
+      pickingASquare = false;
+    } else if (buttons[0].innerHTML === "-") {
+      button = buttons[0];
+      pickingASquare = false;
+    } else if (buttons[2].innerHTML === "-") {
+      button = buttons[2];
+      pickingASquare = false;
+    } else if (buttons[6].innerHTML === "-") {
+      button = buttons[6];
+      pickingASquare = false;
+    } else if (buttons[8].innerHTML === "-") {
+      button = buttons[8];
+      pickingASquare = false;
+    } if (!pickingASquare) {
+      button.innerHTML = "O";
+      button.style.backgroundColor = oColor;
+    } else if (button.innerHTML === "-") {
       button.innerHTML = "O";
       button.style.backgroundColor = oColor;
       pickingASquare = false;
     }
-  } if (checkForWin("O")) {
+  } 
+  if (checkForWin("O")) {
     oWins++;
     alert("O Wins!");
     clearButtons();
-  } else if (checkForDraw()) {
+  } 
+  else if (checkForDraw()) {
     draws++;
     alert("It's a draw!");
     clearButtons();
